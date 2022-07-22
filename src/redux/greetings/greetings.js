@@ -1,14 +1,14 @@
 const initialState = [];
 
-const FETCH_GREETING = "FETCH_GREETING";
-const START_LOADING = "START_LOADING";
-const END_LOADING = "END_LOADING";
+const FETCH_GREETING = 'FETCH_GREETING';
+const START_LOADING = 'START_LOADING';
+const END_LOADING = 'END_LOADING';
 
 export const getGreeting = () => async (dispatch) => {
   dispatch({
     type: START_LOADING,
   });
-  const response = await fetch("http://127.0.0.1:3000/greeting");
+  const response = await fetch('http://127.0.0.1:3000/greeting');
   const responseJSON = await response.json();
   dispatch({
     type: FETCH_GREETING,
